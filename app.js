@@ -32,10 +32,10 @@ app.post('/', function(req,res){
 
     // converting data obj to flat pack json
     const jsonData = JSON.stringify(data)
-    const url = 'https://us8.api.mailchimp.com/3.0/lists/735294da08' // /lists/listId
+    const url = 'https://us8.api.mailchimp.com/3.0/lists/listsId'
     const options = {
         method: 'POST',
-        auth: 'salman:3d42bc1799a2b69de443435a829d92d6-us8' // name: apiKey
+        auth: 'username:apiKey' // name: apiKey
     }
     // storing into request --> sending request procedure to mailchimp
     const request = https.request(url, options, function(response){
@@ -60,9 +60,3 @@ app.post('/failure', function(req,res){
 app.listen(process.env.PORT ||3000, function(){
     console.log('server running on port 3000')
 })
-
-// API key
-// 3d42bc1799a2b69de443435a829d92d6-us8
-
-// List id
-// 735294da08
